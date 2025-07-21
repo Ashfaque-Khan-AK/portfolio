@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* For screens larger than 991px */
+ .cursor {
+            position: fixed;
+            z-index: 1000000;
+            width: 20px;
+            height: 20px;
+            opacity: 0;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            transition: opacity .2s cubic-bezier(.215, .61, .355, 1),height .2s cubic-bezier(.215, .61, .355, 1),width .2s cubic-bezier(.215, .61, .355, 1)
+        }
+
+        .cursor-content-wrap {
+            width: 100%;
+            height: 100%;
+            transition: opacity .2s cubic-bezier(.215, .61, .355, 1),transform .2s cubic-bezier(.215, .61, .355, 1)
+        }
+
+        .cursor-content {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            background-color: #989898;
+            opacity: .5;
+            transform: translate(-50%,-50%);
+            transition: opacity .2s cubic-bezier(.215, .61, .355, 1),height .2s cubic-bezier(.215, .61, .355, 1),width .2s cubic-bezier(.215, .61, .355, 1)
+        }
+
+        .cursor-highlight {
+            position: fixed;
+            z-index: 1001;
+            border-radius: 50%;
+            background-color: #fff;
+            opacity: 0;
+            transform: translate3d(-50%,-50%,1px);
+            transform-style: preserve-3d
+        }
+
+            @media screen and (min-width: 991px) {
+                html, body {
+                    cursor: none;
+                }
+              
+                body:hover .cursor {
+                    opacity: 100%;
+                }
+
+                a {
+                    cursor: none;
+                    z-index: 2;
+                }
+
+                .cursor, .cursor-highlight {
+                    pointer-events: none;
+                }
+
+                .is-locked {
+                    transition-property: width, height, top, left, opacity;
+                    transition-duration: 200ms;
+                    transition-timing-function: cubic-bezier(.215, .61, .355, 1);
+                    opacity: 30% !important;
+                }
+
+                .lift {
+                    transition-property: box-shadow, transform;
+                    transition-duration: 100ms;
+                    transition-timing-function: linear;
+                }
+            }
+         @media screen and (max-width: 991px) {
+              .cursor {
+               display: none;
+             }
+
+         }
