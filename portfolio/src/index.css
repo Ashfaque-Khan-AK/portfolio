@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+ 
+
+  .cta {
+                    display: flex;
+                    padding: 8px 20px;
+                    align-items: center;
+                    color: #006adc;
+                    font-size: 20px;
+                    font-weight: 500
+                }
 /* For screens larger than 991px */
  .cursor {
             position: fixed;
@@ -72,8 +82,134 @@
                 }
             }
          @media screen and (max-width: 991px) {
-              .cursor {
-               display: none;
-             }
+            
+              .home-hero {
+        padding-top: 100px;
+        padding-bottom: 36px;
+    }
+     .home-hero-header {
+        height: auto;
+        min-height: 0;
+        margin-bottom: 100px;
+        padding-top: 0
+    }
+
+    .home-hero-heading {
+        max-width: 590px;
+        font-size: 95px
+    }
+
+    .home-hero-subheading {
+        max-width: 560px;
+        font-size: 20px
+    }
+        
+
 
          }
+
+           .home-hero-heading-wrap {
+                    -webkit-animation: fadeIn 0.4s ease backwards;
+                    animation: fadeIn 0.4s ease backwards;
+                    -webkit-animation-delay: 0.1s;
+                    animation-delay: 0.1s;
+                }
+
+                .home-hero-subheading {
+                    -webkit-animation: fadeIn 0.4s ease backwards;
+                    animation: fadeIn 0.4s ease backwards;
+                    -webkit-animation-delay: 0.2s;
+                    animation-delay: 0.2s;
+                }
+
+                .home-hero .cta {
+                    -webkit-animation: fadeIn 0.4s ease backwards;
+                    animation: fadeIn 0.4s ease backwards;
+                    -webkit-animation-delay: 0.3s;
+                    animation-delay: 0.3s;
+                }
+
+                .home-hero-logos {
+                    -webkit-animation: fadeIn 0.4s ease backwards;
+                    animation: fadeIn 0.4s ease backwards;
+                    -webkit-animation-delay: 0.4s;
+                    animation-delay: 0.4s;
+                }
+
+
+          @-webkit-keyframes fadeIn {
+                    from {
+                        opacity: 0;
+                        -webkit-transform: translateY(50px);
+                    }
+
+                    to {
+                        opacity: auto;
+                        -webkit-transform: translateY(0px);
+                    }
+                }
+
+                @keyframes fadeIn {
+                    from {
+                        opacity: 0;
+                        transform: translateY(50px);
+                    }
+
+                    to {
+                        opacity: auto;
+                        transform: translateY(0px);
+                    }
+                }
+                .home-hero-heading {
+                    background: linear-gradient(0deg, #11181c 20%, rgba(17, 24, 28, 0) 45%), linear-gradient( 90deg, #0f3058 0%, #006adc 33.333%, #11181c 50%, #11181c 100% );
+                    background-size: 300% 100%;
+                    background-repeat: no-repeat;
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    -moz-background-clip: text;
+                    -webkit-animation: intro-gradient 1.8s ease backwards;
+                    animation: intro-gradient 1.8s ease backwards;
+                    -webkit-animation-delay: 0.5s;
+                    animation-delay: 0.5s;
+                }
+                 @-webkit-keyframes intro-gradient {
+                    0% {
+                        background-position: 100% 0%;
+                    }
+
+                    100% {
+                        background-position: 0% 0%;
+                    }
+                }
+
+                @keyframes intro-gradient {
+                    0% {
+                        background-position: 100% 0%;
+                    }
+
+                    100% {
+                        background-position: 0% 0%;
+                    }
+                }
+                 @media only screen and (min-width: 992px) and (max-width: 1600px) and (max-height: 850px) {
+                    .home-hero-heading {
+                        font-size: 100px;
+                    }
+
+                    .home-hero-subheading {
+                        font-size: 20px;
+                        max-width: 580px;
+                    }
+                }
+
+                @media only screen and (min-width: 992px) and (min-height: 1300px) {
+                    .home-hero-heading {
+                        font-size: 124px;
+                    }
+
+                    .home-hero-subheading {
+                        font-size: 24px;
+                        max-width: 700px;
+                    }
+                }
+             
